@@ -3,33 +3,34 @@ import 'package:calculator/components/calculator_button_row.dart';
 import 'package:flutter/material.dart';
 
 class NumberPad extends StatelessWidget {
-  const NumberPad({
-    Key? key,
-  }) : super(key: key);
+  final Function(String val) buttonPress;
+
+  NumberPad({required this.buttonPress});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CalculatorButtonRow(
             buttons: [
               CalculatorButton(
                 value: '7',
                 onPressed: () {
-                  // updateOutput('7');
+                  buttonPress('7');
                 },
               ),
               CalculatorButton(
                 value: '8',
                 onPressed: () {
-                  // updateOutput('8');
+                  buttonPress('8');
                 },
               ),
               CalculatorButton(
                 value: '9',
                 onPressed: () {
-                  // updateOutput('9');
+                  buttonPress('9');
                 },
               )
             ],
@@ -39,19 +40,19 @@ class NumberPad extends StatelessWidget {
               CalculatorButton(
                 value: '4',
                 onPressed: () {
-                  // updateOutput('7');
+                  buttonPress('4');
                 },
               ),
               CalculatorButton(
                 value: '5',
                 onPressed: () {
-                  // updateOutput('8');
+                  buttonPress('5');
                 },
               ),
               CalculatorButton(
                 value: '6',
                 onPressed: () {
-                  // updateOutput('9');
+                  buttonPress('6');
                 },
               )
             ],
@@ -61,19 +62,19 @@ class NumberPad extends StatelessWidget {
               CalculatorButton(
                 value: '1',
                 onPressed: () {
-                  // updateOutput('7');
+                  buttonPress('1');
                 },
               ),
               CalculatorButton(
                 value: '2',
                 onPressed: () {
-                  // updateOutput('8');
+                  buttonPress('2');
                 },
               ),
               CalculatorButton(
                 value: '3',
                 onPressed: () {
-                  // updateOutput('9');
+                  buttonPress('3');
                 },
               )
             ],
@@ -83,13 +84,13 @@ class NumberPad extends StatelessWidget {
               CalculatorButton(
                 value: '0',
                 onPressed: () {
-                  // updateOutput('7');
+                  buttonPress('0');
                 },
               ),
               CalculatorButton(
                 value: '.',
                 onPressed: () {
-                  // updateOutput('8');
+                  buttonPress('.');
                 },
               ),
             ],

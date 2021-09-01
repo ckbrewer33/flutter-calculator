@@ -2,15 +2,15 @@
 import 'package:calculator/components/calculator_button.dart';
 import 'package:flutter/material.dart';
 
-import '../app_colors.dart';
-
 class OperatorPad extends StatelessWidget {
   final Function(String operator) operatorButtonPress;
   final Function() clearButtonPress;
+  final Function() equalsButtonPress;
 
   OperatorPad({
     required this.operatorButtonPress,
-    required this.clearButtonPress
+    required this.clearButtonPress,
+    required this.equalsButtonPress
   });
 
   @override
@@ -39,6 +39,9 @@ class OperatorPad extends StatelessWidget {
             children: [
               CalculatorButton(value: 'C', onPressed: () {
                 clearButtonPress();
+              }),
+              CalculatorButton(value: '=', onPressed: () {
+                equalsButtonPress();
               }),
             ],
           )
